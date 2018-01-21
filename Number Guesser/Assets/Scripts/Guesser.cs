@@ -6,11 +6,14 @@ public class Guesser : MonoBehaviour {
     public int max;
     public int min;
     public int count;
+    public int adjust;
     private int newMax;
     private int newMin;
     private int newCount;
+    private int temp;
     public const int HALF = 2;
     private int guess;
+
     // Use this for initialization
     private void Start () {
         //Intro Dialogue
@@ -22,14 +25,22 @@ public class Guesser : MonoBehaviour {
         
         // Instructions
         print("Press the up arrow for higher, press the down arrow for lower, and hit enter if I got it!");
+        print("If I get your number in ten guesses, I win. If I don't, you win.");
         NextGuess();
         max++;
     }
 
     private void NextGuess() {
         count--;
-        guess = (min + max) / HALF;
-        print("Is the number " + guess + "?");
+        adjust = Random.Range(-10, 10);
+        temp = (min + max + adjust) / HALF;
+        if (temp > max || temp < min || temp == guess) {
+            NextGuess();
+        }
+        else {
+            guess = temp;
+            print("Is the number " + guess + "?");
+        }
     }
 	
 	// Update is called once per frame
@@ -46,7 +57,9 @@ public class Guesser : MonoBehaviour {
         }
         // Press Return
         else if (Input.GetKeyDown(KeyCode.Return)) {
-            print("I have achieved victory. In your face.\n\n\n");
+            print("**************************************");
+            print("I have achieved victory. In your face!");
+            print("**************************************");
             max = newMax;
             min = newMin;
             count = newCount;
@@ -54,7 +67,9 @@ public class Guesser : MonoBehaviour {
         }
         else if (count == 0)
         {
-            print("I have brought shame to my circuits. In my face. T.T\n\n\n");
+            print("****************************************************");
+            print("I have brought shame to my circuits. In my face. T.T");
+            print("****************************************************");
             max = newMax;
             min = newMin;
             count = newCount;
