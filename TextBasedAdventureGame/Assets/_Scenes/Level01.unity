@@ -148,5 +148,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9fc66a54f0d8331438df72f440dd4276, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  myState: 0
-  number: 0
+  playerState: 0
+  timer: 30
+  livingFlag: 0
+  kitchenFlag: 0
+  foyerFlag: 0
