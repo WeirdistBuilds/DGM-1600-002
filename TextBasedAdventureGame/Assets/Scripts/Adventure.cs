@@ -18,7 +18,6 @@ public class Adventure : MonoBehaviour {
     public bool livingFlag = false;
     public bool kitchenFlag = false;
     public bool foyerFlag = false;
-    public bool kidBathroomFlag = false;
     public bool frontYardFlag = false;
     public bool kidsRoomFlag = false;
     public bool yourRoomFlag = false;
