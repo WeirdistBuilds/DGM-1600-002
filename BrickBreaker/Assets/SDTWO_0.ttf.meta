@@ -1,0 +1,21 @@
+fileFormatVersion: 2
+guid: e41a84a443b495246b8f194e35bcd445
+timeCreated: 1517588746
+licenseType: Pro
+TrueTypeFontImporter:
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: SnareDrum Two NBP
+  fontNames:
+  - SnareDrum Two NBP
+  fallbackFontReferences: []
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
