@@ -905,6 +905,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1854323366}
   - component: {fileID: 1854323365}
+  - component: {fileID: 1854323367}
   m_Layer: 9
   m_Name: BoundaryBottom
   m_TagString: Untagged
@@ -950,6 +951,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1854323367
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1854323364}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 365f9380f74f0e047ab167919108939e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  theGameManager: {fileID: 0}
 --- !u!1 &1994563119
 GameObject:
   m_ObjectHideFlags: 0
@@ -1015,7 +1028,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1994563119}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 12.4, y: 0.7, z: 0}
+  m_LocalPosition: {x: 12.75, y: 1.67, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}

@@ -88,9 +88,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Scripts\Ball.cs" />
+    <Compile Include="Assets\Scripts\BoundaryBottom.cs" />
     <Compile Include="Assets\Scripts\DontDestroy.cs" />
+    <Compile Include="Assets\Scripts\GameManager.cs" />
     <Compile Include="Assets\Scripts\Health.cs" />
-    <Compile Include="Assets\Scripts\LevelManager.cs" />
     <Compile Include="Assets\Scripts\Paddle.cs" />
     <Compile Include="Assets\Scripts\Singleton.cs" />
   </ItemGroup>
