@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: e41a84a443b495246b8f194e35bcd445
+guid: 0d42b151683ed774aa7db0018c2e6866
 timeCreated: 1517588746
 licenseType: Pro
 TrueTypeFontImporter:
@@ -12,7 +12,8 @@ TrueTypeFontImporter:
   fontName: SnareDrum Two NBP
   fontNames:
   - SnareDrum Two NBP
-  fallbackFontReferences: []
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: e41a84a443b495246b8f194e35bcd445, type: 3}
   customCharacters: 
   fontRenderingMode: 0
   ascentCalculationMode: 1

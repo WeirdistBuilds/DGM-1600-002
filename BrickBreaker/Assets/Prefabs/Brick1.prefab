@@ -78,6 +78,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0dd678ab0e2828548a5e8de86f1ba2a9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  brickWhole: {fileID: 21300000, guid: dd40f48ac0cd9c94bbddd37ae01da1a3, type: 3}
+  brickCracked: {fileID: 21300004, guid: dd40f48ac0cd9c94bbddd37ae01da1a3, type: 3}
+  brickBroken: {fileID: 21300006, guid: dd40f48ac0cd9c94bbddd37ae01da1a3, type: 3}
   health: 1
 --- !u!212 &212628927480605612
 SpriteRenderer:

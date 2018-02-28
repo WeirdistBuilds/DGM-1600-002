@@ -1,10 +1,13 @@
 fileFormatVersion: 2
 guid: 0dd678ab0e2828548a5e8de86f1ba2a9
-timeCreated: 1518021419
-licenseType: Pro
+timeCreated: 1519404021
+licenseType: Free
 MonoImporter:
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - brickWhole: {fileID: 21300000, guid: dd40f48ac0cd9c94bbddd37ae01da1a3, type: 3}
+  - brickCracked: {fileID: 21300004, guid: dd40f48ac0cd9c94bbddd37ae01da1a3, type: 3}
+  - brickBroken: {fileID: 21300006, guid: dd40f48ac0cd9c94bbddd37ae01da1a3, type: 3}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

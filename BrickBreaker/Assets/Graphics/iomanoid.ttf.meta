@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 5f79f51b4886f9c4698b9715f7175518
+guid: 6a234d356518e7f4d9529bb12db97c38
 timeCreated: 1517588061
 licenseType: Pro
 TrueTypeFontImporter:
@@ -12,7 +12,8 @@ TrueTypeFontImporter:
   fontName: Iomanoid
   fontNames:
   - Iomanoid
-  fallbackFontReferences: []
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: 5f79f51b4886f9c4698b9715f7175518, type: 3}
   customCharacters: 
   fontRenderingMode: 0
   ascentCalculationMode: 1
