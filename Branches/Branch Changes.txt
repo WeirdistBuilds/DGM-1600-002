@@ -1,4 +1,4 @@
 This is a change for branch number 1
 Name: Kyle
 Rank: General
-Serial Number: 
+Serial Number: 00001
