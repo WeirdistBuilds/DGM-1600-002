@@ -5,6 +5,8 @@ TagManager:
   serializedVersion: 2
   tags:
   - KillBox
+  - Checkpoint
+  - MovingPlatform
   layers:
   - Default
   - TransparentFX
@@ -39,6 +41,12 @@ TagManager:
   - 
   - 
   m_SortingLayers:
+  - name: World Objects
+    uniqueID: 3691015563
+    locked: 0
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Player
+    uniqueID: 3245570307
     locked: 0

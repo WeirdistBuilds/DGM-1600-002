@@ -9,6 +9,7 @@ public class PlayerController : MonoBehaviour {
     public bool isGrounded;
     public float moveSpeed;
     public float jumpSpeed;
+    public Vector3 spawnPoint;
 
     public Transform groundCheck;
     public float groundCheckRadius;
@@ -16,10 +17,17 @@ public class PlayerController : MonoBehaviour {
 
     private Animator playerAnim;
 
+    public LevelManager theLevelManager;
+    
+
 	// Use this for initialization
 	void Start () {
         playerRigidBody = GetComponent<Rigidbody2D>();
         playerAnim = GetComponent<Animator>();
+
+        theLevelManager = FindObjectOfType<LevelManager>();
+
+        spawnPoint = transform.position;
 	}
 	
 	// Update is called once per frame
@@ -47,12 +55,33 @@ public class PlayerController : MonoBehaviour {
         playerAnim.SetBool("Grounded", isGrounded);
 	}
 
-    private void OnTriggerEnter2D(Collider2D other)
+    void OnTriggerEnter2D(Collider2D other)
     {
         if(other.tag == "KillBox")
         {
-            // placeholder
-            gameObject.SetActive(false);
+            theLevelManager.Respawn();
+        }
+
+        if(other.tag == "Checkpoint")
+        {
+            spawnPoint = other.transform.position;
+        }
+
+    }
+
+    void OnCollisionEnter2D(Collision2D other)
+    {
+        if(other.gameObject.tag == "MovingPlatform")
+        {
+            transform.parent = other.transform; 
+        }
+    }
+
+    void OnCollisionExit2D(Collision2D other)
+    {
+        if (other.gameObject.tag == "MovingPlatform")
+        {
+            transform.parent = null;
         }
     }
 
