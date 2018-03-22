@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 public class Health : MonoBehaviour {
 
     private SpriteRenderer spriteRenderer;
+    private GameManager theGameManager;
     public Sprite brickWhole;
     public Sprite brickCracked;
     public Sprite brickBroken;
@@ -14,9 +15,10 @@ public class Health : MonoBehaviour {
     void Start ()
     {
         spriteRenderer = GetComponent<SpriteRenderer>();
+        theGameManager = GameObject.FindObjectOfType<GameManager>();
         if (spriteRenderer.sprite == null)
             spriteRenderer.sprite = brickWhole;
-        GameObject.FindObjectOfType<GameManager>().AddBrick();
+        theGameManager.AddBrick();
 
     }
 
@@ -28,11 +30,12 @@ public class Health : MonoBehaviour {
         if (health <= 0)
         {
             Destroy(gameObject);
-            GameObject.FindObjectOfType<GameManager>().MinusBrick();
-            Debug.Log("Brick Count: " + GameObject.FindObjectOfType<GameManager>().GetBrickCount());
-            if (GameObject.FindObjectOfType<GameManager>().GetBrickCount() <= 0)
+            theGameManager.MinusBrick();
+            Debug.Log("Brick Count: " + theGameManager.GetBrickCount());
+            if (theGameManager.GetBrickCount() <= 0)
             {
-                GameObject.FindObjectOfType<GameManager>().LoadNextLevel();
+                theGameManager.IncreaseLevel();
+                theGameManager.LoadNextLevel();
             }
         }
         ChangeSprite();

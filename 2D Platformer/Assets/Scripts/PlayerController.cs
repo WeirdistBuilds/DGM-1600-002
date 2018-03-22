@@ -6,22 +6,39 @@ public class PlayerController : MonoBehaviour {
 
     private Rigidbody2D playerRigidBody;
 
+    //jump variables
     public bool isGrounded;
     public float moveSpeed;
     public float jumpSpeed;
+
+    //spawn variable
     public Vector3 spawnPoint;
 
+    //ground variables
     public Transform groundCheck;
     public float groundCheckRadius;
     public LayerMask groundLayer;
 
+    //stomp variable
+    public GameObject stompBox;
+
+    //animation variable
     private Animator playerAnim;
 
+    //level manager
     public LevelManager theLevelManager;
-    
 
-	// Use this for initialization
-	void Start () {
+    //knockback variables
+    public float knockbackForce;
+    public float knockbackLength;
+    private float knockbackCounter;
+
+    //invincibility variables
+    public float iFrameLength;
+    public float iFrameCounter;
+
+    // Use this for initialization
+    void Start () {
         playerRigidBody = GetComponent<Rigidbody2D>();
         playerAnim = GetComponent<Animator>();
 
@@ -29,37 +46,81 @@ public class PlayerController : MonoBehaviour {
 
         spawnPoint = transform.position;
 	}
-	
-	// Update is called once per frame
-	void Update () {
+
+    // Update is called once per frame
+    void Update() {
 
         isGrounded = Physics2D.OverlapCircle(groundCheck.position, groundCheckRadius, groundLayer);
 
-        if (Input.GetAxisRaw("Horizontal") > 0f)
+        if (knockbackCounter <= 0)
         {
-            playerRigidBody.velocity = new Vector3(moveSpeed, playerRigidBody.velocity.y);
-            transform.localScale = new Vector3(1f, 1f, 1f);
-        }
-        else if (Input.GetAxisRaw("Horizontal") < 0f)
-        {
-            playerRigidBody.velocity = new Vector3(-moveSpeed, playerRigidBody.velocity.y);
-            transform.localScale = new Vector3(-1f, 1f, 1f);
+            
+            if (Input.GetAxisRaw("Horizontal") > 0f)
+            {
+                playerRigidBody.velocity = new Vector3(moveSpeed, playerRigidBody.velocity.y);
+                transform.localScale = new Vector3(1f, 1f, 1f);
+            }
+            else if (Input.GetAxisRaw("Horizontal") < 0f)
+            {
+                playerRigidBody.velocity = new Vector3(-moveSpeed, playerRigidBody.velocity.y);
+                transform.localScale = new Vector3(-1f, 1f, 1f);
+            }
+
+            if (Input.GetButtonDown("Jump") && isGrounded)
+            {
+                playerRigidBody.velocity = new Vector3(playerRigidBody.velocity.x, jumpSpeed);
+            }
+
+            playerAnim.SetFloat("Speed", Mathf.Abs(playerRigidBody.velocity.x));
+            playerAnim.SetBool("Grounded", isGrounded);
+
+            if (playerRigidBody.velocity.y < 0)
+            {
+                stompBox.SetActive(true);
+            }
+            else
+            {
+                stompBox.SetActive(false);
+            }
         }
 
-        if(Input.GetButtonDown("Jump") && isGrounded)
+        if (knockbackCounter > 0)
         {
-            playerRigidBody.velocity = new Vector3(playerRigidBody.velocity.x, jumpSpeed);
-        }
+            knockbackCounter -= Time.deltaTime;
 
-        playerAnim.SetFloat("Speed", Mathf.Abs(playerRigidBody.velocity.x));
-        playerAnim.SetBool("Grounded", isGrounded);
+            if(transform.localScale.x > 0)
+            {
+                playerRigidBody.velocity = new Vector3(-knockbackForce, knockbackForce, 0f);
+            }
+            else
+            {
+                playerRigidBody.velocity = new Vector3(knockbackForce, knockbackForce, 0f);
+            }
+            
+        }
+        if (iFrameCounter > 0)
+        {
+            iFrameCounter -= Time.deltaTime;
+        }
+        else
+        {
+            theLevelManager.invincible = false;
+        }
 	}
+
+    public void Knockback()
+    {
+        knockbackCounter = knockbackLength;
+        iFrameCounter = iFrameLength;
+        theLevelManager.invincible = true;
+    }
 
     void OnTriggerEnter2D(Collider2D other)
     {
         if(other.tag == "KillBox")
         {
-            theLevelManager.Respawn();
+            theLevelManager.HurtPlayer(theLevelManager.maxHealth);
+            //theLevelManager.Respawn();
         }
 
         if(other.tag == "Checkpoint")
@@ -84,5 +145,4 @@ public class PlayerController : MonoBehaviour {
             transform.parent = null;
         }
     }
-
 }
