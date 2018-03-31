@@ -9,6 +9,7 @@ public class PlayerController : MonoBehaviour {
     //jump variables
     public bool isGrounded;
     public float moveSpeed;
+    private float activeMoveSpeed;
     public float jumpSpeed;
 
     //spawn variable
@@ -18,6 +19,8 @@ public class PlayerController : MonoBehaviour {
     public Transform groundCheck;
     public float groundCheckRadius;
     public LayerMask groundLayer;
+    private bool onPlatform;
+    public float onPlatformSpeedMod;
 
     //stomp variable
     public GameObject stompBox;
@@ -37,6 +40,10 @@ public class PlayerController : MonoBehaviour {
     public float iFrameLength;
     public float iFrameCounter;
 
+    //SFX variables
+    public AudioSource jumpSound;
+    public AudioSource hurtSound;
+
     // Use this for initialization
     void Start () {
         playerRigidBody = GetComponent<Rigidbody2D>();
@@ -45,6 +52,7 @@ public class PlayerController : MonoBehaviour {
         theLevelManager = FindObjectOfType<LevelManager>();
 
         spawnPoint = transform.position;
+        activeMoveSpeed = moveSpeed;
 	}
 
     // Update is called once per frame
@@ -54,21 +62,30 @@ public class PlayerController : MonoBehaviour {
 
         if (knockbackCounter <= 0)
         {
-            
+            if (onPlatform)
+            {
+                activeMoveSpeed = moveSpeed * onPlatformSpeedMod;
+            }
+            else
+            {
+                activeMoveSpeed = moveSpeed;
+            }
+
             if (Input.GetAxisRaw("Horizontal") > 0f)
             {
-                playerRigidBody.velocity = new Vector3(moveSpeed, playerRigidBody.velocity.y);
+                playerRigidBody.velocity = new Vector3(activeMoveSpeed, playerRigidBody.velocity.y);
                 transform.localScale = new Vector3(1f, 1f, 1f);
             }
             else if (Input.GetAxisRaw("Horizontal") < 0f)
             {
-                playerRigidBody.velocity = new Vector3(-moveSpeed, playerRigidBody.velocity.y);
+                playerRigidBody.velocity = new Vector3(-activeMoveSpeed, playerRigidBody.velocity.y);
                 transform.localScale = new Vector3(-1f, 1f, 1f);
             }
 
             if (Input.GetButtonDown("Jump") && isGrounded)
             {
                 playerRigidBody.velocity = new Vector3(playerRigidBody.velocity.x, jumpSpeed);
+                jumpSound.Play();
             }
 
             playerAnim.SetFloat("Speed", Mathf.Abs(playerRigidBody.velocity.x));
@@ -134,7 +151,8 @@ public class PlayerController : MonoBehaviour {
     {
         if(other.gameObject.tag == "MovingPlatform")
         {
-            transform.parent = other.transform; 
+            transform.parent = other.transform;
+            onPlatform = true;
         }
     }
 
@@ -143,6 +161,7 @@ public class PlayerController : MonoBehaviour {
         if (other.gameObject.tag == "MovingPlatform")
         {
             transform.parent = null;
+            onPlatform = false;
         }
     }
 }

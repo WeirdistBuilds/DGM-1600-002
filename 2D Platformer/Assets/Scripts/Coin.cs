@@ -5,7 +5,9 @@ using UnityEngine;
 public class Coin : MonoBehaviour {
 
     private LevelManager theLevelManager;
+    public int bonusAtCoinCount;
     public int coinValue;
+    public int livesAtBonus;
 
 	// Use this for initialization
 	void Start () {
@@ -19,11 +21,18 @@ public class Coin : MonoBehaviour {
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if(other.tag == "Player")
+        if (other.tag == "Player")
         {
             theLevelManager.AddCoins(coinValue);
+            if (theLevelManager.coinCount >= bonusAtCoinCount)
+            {
+                theLevelManager.AddCoins(-bonusAtCoinCount);
+                theLevelManager.AddLives(livesAtBonus);
+
+            }
             gameObject.SetActive(false);
-            //Destroy(gameObject);
         }
+        
+
     }
 }

@@ -15,6 +15,7 @@ public class LevelManager : MonoBehaviour {
     //coin variables
     public int coinCount;
     public Text coinText;
+    public AudioSource coinSound;
 
     //health variables
     public Image heart1;
@@ -36,6 +37,8 @@ public class LevelManager : MonoBehaviour {
     public float respawnWaitTime;
     public ResetOnRespawn[] objectsToReset;
     public GameObject gameOverScreen;
+    public AudioSource levelMusic;
+    public AudioSource gameOverMusic;
 
 
     // Use this for initialization
@@ -67,6 +70,8 @@ public class LevelManager : MonoBehaviour {
         {
             currentPlayer.gameObject.SetActive(false);
             gameOverScreen.SetActive(true);
+            levelMusic.Stop();
+            gameOverMusic.Play();
         }
         
     }
@@ -97,12 +102,14 @@ public class LevelManager : MonoBehaviour {
     {
         coinCount += coinsToAdd;
         coinText.text = "Coins: " + coinCount;
+        coinSound.Play();
     }
 
     public void AddLives(int livesToAdd)
     {
         currentLives += livesToAdd;
         livesText.text = "x " + currentLives;
+        coinSound.Play();
     }
 
     public void HurtPlayer(int damageToTake)
@@ -113,12 +120,24 @@ public class LevelManager : MonoBehaviour {
             UpdateHeartMeter();
 
             currentPlayer.Knockback();
-
+            currentPlayer.hurtSound.Play();
             if (healthCount <= 0)
             {
                 Respawn();
             }
         }
+    }
+
+    public void GiveHealth(int healthToGive)
+    {
+        healthCount += healthToGive;
+
+        if (healthCount > maxHealth)
+        {
+            healthCount = maxHealth;
+        }
+
+        UpdateHeartMeter();
     }
 
     public void UpdateHeartMeter()

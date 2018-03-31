@@ -69,7 +69,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f15b957278c7670439274a8b8e2882d1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  bonusAtCoinCount: 100
   coinValue: 1
+  livesAtBonus: 1
 --- !u!114 &114665025368097498
 MonoBehaviour:
   m_ObjectHideFlags: 1
