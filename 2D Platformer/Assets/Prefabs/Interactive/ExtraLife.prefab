@@ -9,20 +9,19 @@ Prefab:
     m_Modifications: []
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
-  m_RootGameObject: {fileID: 1855869986390688}
+  m_RootGameObject: {fileID: 1365675265905490}
   m_IsPrefabParent: 1
---- !u!1 &1855869986390688
+--- !u!1 &1365675265905490
 GameObject:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   serializedVersion: 5
   m_Component:
-  - component: {fileID: 4740451291323428}
-  - component: {fileID: 212257312400477088}
-  - component: {fileID: 58676304602619410}
-  - component: {fileID: 95320715555030548}
-  - component: {fileID: 114338078178211386}
+  - component: {fileID: 4401573995046778}
+  - component: {fileID: 212641631409944634}
+  - component: {fileID: 114830930479182250}
+  - component: {fileID: 58227915551226176}
   m_Layer: 0
   m_Name: ExtraLife
   m_TagString: Untagged
@@ -30,25 +29,25 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &4740451291323428
+--- !u!4 &4401573995046778
 Transform:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1855869986390688}
-  m_LocalRotation: {x: 0, y: 0, z: -0, w: -1}
-  m_LocalPosition: {x: 60.55, y: 0.66, z: 0}
+  m_GameObject: {fileID: 1365675265905490}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 61.93, y: -0.6, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 360, z: 0}
---- !u!58 &58676304602619410
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!58 &58227915551226176
 CircleCollider2D:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1855869986390688}
+  m_GameObject: {fileID: 1365675265905490}
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
@@ -58,41 +57,35 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.5
---- !u!95 &95320715555030548
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1855869986390688}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 5b24a6dd8e823a146a11e81a8148f961, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
---- !u!114 &114338078178211386
+--- !u!114 &114830930479182250
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1855869986390688}
+  m_GameObject: {fileID: 1365675265905490}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 96f089067a4ac1447a27ab3955fbbf6d, type: 3}
+  m_Script: {fileID: 11500000, guid: b37268eeefed04b4bbb653735dc02c46, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  livesToGive: 1
---- !u!212 &212257312400477088
+  theSprite: {fileID: 0}
+  pickupState: 0
+  coin1Sprite: {fileID: 21300156, guid: af75089ec92c25a4aa4dade63357157c, type: 3}
+  coin5Sprite: {fileID: 21300358, guid: af75089ec92c25a4aa4dade63357157c, type: 3}
+  bonusAtCoinCount: 100
+  coin1Value: 1
+  coin5Value: 5
+  livesAtBonus: 1
+  heartSprite: {fileID: 21300714, guid: af75089ec92c25a4aa4dade63357157c, type: 3}
+  healthToAdd: 2
+  lifeSprite: {fileID: 21300338, guid: af75089ec92c25a4aa4dade63357157c, type: 3}
+  livesToAdd: 1
+--- !u!212 &212641631409944634
 SpriteRenderer:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1855869986390688}
+  m_GameObject: {fileID: 1365675265905490}
   m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
@@ -121,7 +114,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300348, guid: af75089ec92c25a4aa4dade63357157c, type: 3}
+  m_Sprite: {fileID: 21300388, guid: af75089ec92c25a4aa4dade63357157c, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0

@@ -9,46 +9,45 @@ Prefab:
     m_Modifications: []
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
-  m_RootGameObject: {fileID: 1292327631972028}
+  m_RootGameObject: {fileID: 1114158454419418}
   m_IsPrefabParent: 1
---- !u!1 &1292327631972028
+--- !u!1 &1114158454419418
 GameObject:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   serializedVersion: 5
   m_Component:
-  - component: {fileID: 4183390519274998}
-  - component: {fileID: 212158202051672244}
-  - component: {fileID: 58425954933683914}
-  - component: {fileID: 114544251179175044}
-  - component: {fileID: 114665025368097498}
+  - component: {fileID: 4659435681421844}
+  - component: {fileID: 212787586380660104}
+  - component: {fileID: 114118293669359066}
+  - component: {fileID: 58828886751907916}
   m_Layer: 0
-  m_Name: Coin
+  m_Name: Coin5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &4183390519274998
+--- !u!4 &4659435681421844
 Transform:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1292327631972028}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 61.92, y: -1.39, z: 0}
+  m_GameObject: {fileID: 1114158454419418}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 40.44, y: -1.17, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!58 &58425954933683914
+--- !u!58 &58828886751907916
 CircleCollider2D:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1292327631972028}
+  m_GameObject: {fileID: 1114158454419418}
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
@@ -57,38 +56,36 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 0.3
---- !u!114 &114544251179175044
+  m_Radius: 0.5
+--- !u!114 &114118293669359066
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1292327631972028}
+  m_GameObject: {fileID: 1114158454419418}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f15b957278c7670439274a8b8e2882d1, type: 3}
+  m_Script: {fileID: 11500000, guid: b37268eeefed04b4bbb653735dc02c46, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  theSprite: {fileID: 0}
+  pickupState: 2
+  coin1Sprite: {fileID: 21300156, guid: af75089ec92c25a4aa4dade63357157c, type: 3}
+  coin5Sprite: {fileID: 21300358, guid: af75089ec92c25a4aa4dade63357157c, type: 3}
   bonusAtCoinCount: 100
-  coinValue: 1
+  coin1Value: 1
+  coin5Value: 5
   livesAtBonus: 1
---- !u!114 &114665025368097498
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1292327631972028}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ae40aaad21657ba4282810790f27cfdb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!212 &212158202051672244
+  heartSprite: {fileID: 21300714, guid: af75089ec92c25a4aa4dade63357157c, type: 3}
+  healthToAdd: 2
+  lifeSprite: {fileID: 21300338, guid: af75089ec92c25a4aa4dade63357157c, type: 3}
+  livesToAdd: 1
+--- !u!212 &212787586380660104
 SpriteRenderer:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1292327631972028}
+  m_GameObject: {fileID: 1114158454419418}
   m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
@@ -117,7 +114,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300156, guid: af75089ec92c25a4aa4dade63357157c, type: 3}
+  m_Sprite: {fileID: 21300388, guid: af75089ec92c25a4aa4dade63357157c, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
