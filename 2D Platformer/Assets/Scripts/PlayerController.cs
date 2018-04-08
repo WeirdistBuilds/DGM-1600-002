@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour {
 
-    private Rigidbody2D playerRigidBody;
+    public Rigidbody2D playerRigidBody;
 
     //jump variables
     public bool isGrounded;
@@ -30,6 +30,7 @@ public class PlayerController : MonoBehaviour {
 
     //level manager
     public LevelManager theLevelManager;
+    public bool canMove;
 
     //knockback variables
     public float knockbackForce;
@@ -50,6 +51,7 @@ public class PlayerController : MonoBehaviour {
         playerAnim = GetComponent<Animator>();
 
         theLevelManager = FindObjectOfType<LevelManager>();
+        canMove = true;
 
         spawnPoint = transform.position;
         activeMoveSpeed = moveSpeed;
@@ -60,7 +62,7 @@ public class PlayerController : MonoBehaviour {
 
         isGrounded = Physics2D.OverlapCircle(groundCheck.position, groundCheckRadius, groundLayer);
 
-        if (knockbackCounter <= 0)
+        if (knockbackCounter <= 0 && canMove)
         {
             if (onPlatform)
             {

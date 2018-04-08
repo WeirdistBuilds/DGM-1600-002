@@ -39,14 +39,30 @@ public class LevelManager : MonoBehaviour {
     public GameObject gameOverScreen;
     public AudioSource levelMusic;
     public AudioSource gameOverMusic;
+    public bool respawnCoActive;
 
 
     // Use this for initialization
     void Start () {
         currentPlayer = FindObjectOfType<PlayerController>();
-        coinText.text = "Coins: " + coinCount;
         healthCount = maxHealth;
-        currentLives = startingLives;
+        
+        //carry coins over or not
+        if(PlayerPrefs.HasKey("CoinCount"))
+        {
+            coinCount = PlayerPrefs.GetInt("CoinCount");
+        }
+        coinText.text = "Coins: " + coinCount;
+
+        //carry lives over or not
+        if(PlayerPrefs.HasKey("CurrentLives"))
+        {
+            currentLives = PlayerPrefs.GetInt("CurrentLives");
+        }
+        else
+        {
+            currentLives = startingLives;
+        }
         livesText.text = "x " + currentLives;
 
         objectsToReset = FindObjectsOfType<ResetOnRespawn>();
@@ -78,10 +94,14 @@ public class LevelManager : MonoBehaviour {
 
     public IEnumerator RespawnCo()
     {
+        respawnCoActive = true;
+
         currentPlayer.gameObject.SetActive(false);
         Instantiate(deathAnim, currentPlayer.transform.position, currentPlayer.transform.rotation);
 
         yield return new WaitForSeconds(respawnWaitTime);
+
+        respawnCoActive = false;
 
         healthCount = maxHealth;
         UpdateHeartMeter();
