@@ -12,10 +12,10 @@ public class LevelManager : MonoBehaviour {
     //invincibility variable
     public bool invincible;
 
-    //coin variables
-    public int coinCount;
-    public Text coinText;
-    public AudioSource coinSound;
+    //blood variables
+    public int bloodCount;
+    public Text bloodText;
+    public AudioSource bloodSound;
 
     //health variables
     public Image heart1;
@@ -47,12 +47,12 @@ public class LevelManager : MonoBehaviour {
         currentPlayer = FindObjectOfType<PlayerController>();
         healthCount = maxHealth;
         
-        //carry coins over or not
-        if(PlayerPrefs.HasKey("CoinCount"))
+        //carry blood over or not
+        if(PlayerPrefs.HasKey("BloodCount"))
         {
-            coinCount = PlayerPrefs.GetInt("CoinCount");
+            bloodCount = PlayerPrefs.GetInt("BloodCount");
         }
-        coinText.text = "Coins: " + coinCount;
+        bloodText.text = "Blood: " + bloodCount;
 
         //carry lives over or not
         if(PlayerPrefs.HasKey("CurrentLives"))
@@ -105,8 +105,8 @@ public class LevelManager : MonoBehaviour {
 
         healthCount = maxHealth;
         UpdateHeartMeter();
-        coinCount = 0;
-        coinText.text = "Coins: " + coinCount;
+        bloodCount = 0;
+        bloodText.text = "Blood: " + bloodCount;
 
         currentPlayer.transform.position = currentPlayer.spawnPoint;
         currentPlayer.gameObject.SetActive(true);
@@ -118,18 +118,18 @@ public class LevelManager : MonoBehaviour {
         }
     }
 
-    public void AddCoins(int coinsToAdd)
+    public void AddBlood(int bloodToAdd)
     {
-        coinCount += coinsToAdd;
-        coinText.text = "Coins: " + coinCount;
-        coinSound.Play();
+        bloodCount += bloodToAdd;
+        bloodText.text = "Blood: " + bloodCount;
+        bloodSound.Play();
     }
 
     public void AddLives(int livesToAdd)
     {
         currentLives += livesToAdd;
         livesText.text = "x " + currentLives;
-        coinSound.Play();
+        bloodSound.Play();
     }
 
     public void HurtPlayer(int damageToTake)

@@ -4,21 +4,21 @@ using UnityEngine;
 
 public class CheckpointController : MonoBehaviour {
 
-    public Sprite flagClosed;
-    public Sprite flagOpen;
+    public Sprite computerOff;
+    public Sprite computerOn;
     public bool checkpointActive;
-    private SpriteRenderer flagSpriteRenderer;
+    private SpriteRenderer theSpriteRenderer;
     
     // Use this for initialization
 	void Start () {
-        flagSpriteRenderer = GetComponent<SpriteRenderer>();
+        theSpriteRenderer = GetComponent<SpriteRenderer>();
 	}
 
     void OnTriggerEnter2D(Collider2D other)
     {
         if(other.tag == "Player")
         {
-            flagSpriteRenderer.sprite = flagOpen;
+            theSpriteRenderer.sprite = computerOn;
             checkpointActive = true;
         }
     }

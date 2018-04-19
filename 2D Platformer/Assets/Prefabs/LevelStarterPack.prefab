@@ -365,6 +365,22 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!1 &1488667663034456
+GameObject:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4702276095577682}
+  - component: {fileID: 61449951734546592}
+  m_Layer: 0
+  m_Name: KillBox
+  m_TagString: KillBox
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!1 &1527605533468764
 GameObject:
   m_ObjectHideFlags: 1
@@ -476,7 +492,7 @@ GameObject:
   - component: {fileID: 4000607483523432}
   - component: {fileID: 61232184572894688}
   m_Layer: 0
-  m_Name: KillBox
+  m_Name: BackupKillBox
   m_TagString: KillBox
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -658,7 +674,7 @@ GameObject:
   - component: {fileID: 222517226236909670}
   - component: {fileID: 114034156284250744}
   m_Layer: 5
-  m_Name: CoinText
+  m_Name: BloodText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -834,11 +850,11 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1593724937265772}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: -6.5, z: 10}
-  m_LocalScale: {x: 50, y: 1, z: 1}
+  m_LocalPosition: {x: 0, y: -20, z: 10}
+  m_LocalScale: {x: 50, y: 5, z: 1}
   m_Children: []
   m_Father: {fileID: 4824496490510436}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4022335602347948
 Transform:
@@ -865,7 +881,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1260910890972370}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.502, z: 0}
+  m_LocalPosition: {x: 0, y: -0.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4867466895313506}
@@ -1021,6 +1037,19 @@ Transform:
   m_Father: {fileID: 4867466895313506}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &4702276095577682
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1488667663034456}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: -6.5, z: 10}
+  m_LocalScale: {x: 50, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4824496490510436}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4741826155683858
 Transform:
   m_ObjectHideFlags: 1
@@ -1044,6 +1073,7 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
+  - {fileID: 4702276095577682}
   - {fileID: 4000607483523432}
   - {fileID: 4986610870675810}
   m_Father: {fileID: 4022335602347948}
@@ -1105,7 +1135,7 @@ Transform:
   - {fileID: 4536522808634142}
   - {fileID: 4249593862880334}
   m_Father: {fileID: 4824496490510436}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!20 &20375433528087414
 Camera:
@@ -1213,6 +1243,31 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!61 &61449951734546592
+BoxCollider2D:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1488667663034456}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1}
+  m_EdgeRadius: 0
 --- !u!61 &61787515624045718
 BoxCollider2D:
   m_ObjectHideFlags: 1
@@ -1225,7 +1280,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: -0.51}
+  m_Offset: {x: 0, y: -0.47}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -1236,7 +1291,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.41, y: 0.09}
+  m_Size: {x: 0.43, y: 0.09}
   m_EdgeRadius: 0
 --- !u!81 &81858022198167480
 AudioListener:
@@ -1694,7 +1749,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Coins: 99999'
+  m_Text: 'Blood: 99999'
 --- !u!114 &114039525011377194
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1708,15 +1763,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currentPlayer: {fileID: 0}
   invincible: 0
-  coinCount: 0
-  coinText: {fileID: 114034156284250744}
-  coinSound: {fileID: 82716552138030674}
+  bloodCount: 0
+  bloodText: {fileID: 114034156284250744}
+  bloodSound: {fileID: 82716552138030674}
   heart1: {fileID: 114183714553934800}
   heart2: {fileID: 114409454640087160}
   heart3: {fileID: 114635413626655616}
-  heartFull: {fileID: 21300714, guid: af75089ec92c25a4aa4dade63357157c, type: 3}
-  heartHalf: {fileID: 21300716, guid: af75089ec92c25a4aa4dade63357157c, type: 3}
-  heartEmpty: {fileID: 21300718, guid: af75089ec92c25a4aa4dade63357157c, type: 3}
+  heartFull: {fileID: 21300066, guid: 46624ff7f72365147ae4df6c3afe4ccd, type: 3}
+  heartHalf: {fileID: 21300068, guid: 46624ff7f72365147ae4df6c3afe4ccd, type: 3}
+  heartEmpty: {fileID: 21300070, guid: 46624ff7f72365147ae4df6c3afe4ccd, type: 3}
   maxHealth: 6
   healthCount: 0
   currentLives: 0
@@ -1829,7 +1884,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300714, guid: af75089ec92c25a4aa4dade63357157c, type: 3}
+  m_Sprite: {fileID: 21300066, guid: 46624ff7f72365147ae4df6c3afe4ccd, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1
@@ -2035,7 +2090,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300714, guid: af75089ec92c25a4aa4dade63357157c, type: 3}
+  m_Sprite: {fileID: 21300066, guid: 46624ff7f72365147ae4df6c3afe4ccd, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1
@@ -2089,7 +2144,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300338, guid: af75089ec92c25a4aa4dade63357157c, type: 3}
+  m_Sprite: {fileID: 21300076, guid: 46624ff7f72365147ae4df6c3afe4ccd, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -2228,7 +2283,7 @@ MonoBehaviour:
   canMove: 0
   knockbackForce: 2
   knockbackLength: 0.1
-  iFrameLength: 1
+  iFrameLength: 0.5
   iFrameCounter: 0
   jumpSound: {fileID: 82213545752586046}
   hurtSound: {fileID: 82572100530358218}
@@ -2297,7 +2352,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300714, guid: af75089ec92c25a4aa4dade63357157c, type: 3}
+  m_Sprite: {fileID: 21300066, guid: 46624ff7f72365147ae4df6c3afe4ccd, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1
@@ -2985,7 +3040,7 @@ SpriteRenderer:
   m_SortingLayerID: -1049396989
   m_SortingLayer: 1
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300038, guid: af75089ec92c25a4aa4dade63357157c, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 46624ff7f72365147ae4df6c3afe4ccd, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0

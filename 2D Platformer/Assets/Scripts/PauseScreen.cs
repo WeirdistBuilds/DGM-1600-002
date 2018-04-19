@@ -53,7 +53,7 @@ public class PauseScreen : MonoBehaviour {
     public void LevelSelect()
     {
         PlayerPrefs.SetInt("CurrentLives", theLevelManager.currentLives);
-        PlayerPrefs.SetInt("CoinCount", theLevelManager.coinCount);
+        PlayerPrefs.SetInt("CoinCount", theLevelManager.bloodCount);
         Time.timeScale = 1f;
         SceneManager.LoadScene(levelSelect);
     }

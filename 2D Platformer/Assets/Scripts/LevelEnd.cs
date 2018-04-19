@@ -12,8 +12,8 @@ public class LevelEnd : MonoBehaviour {
     private CameraController theCamera;
     private LevelManager theLevelManager;
 
-    public Sprite flagOpen;
-    private SpriteRenderer flagSpriteRenderer;
+    public Sprite skullTaken;
+    private SpriteRenderer skullSpriteRenderer;
 
     public float waitToMove;
     public float waitToLoad;
@@ -24,7 +24,7 @@ public class LevelEnd : MonoBehaviour {
         thePlayer = FindObjectOfType<PlayerController>();
         theCamera = FindObjectOfType<CameraController>();
         theLevelManager = FindObjectOfType<LevelManager>();
-        flagSpriteRenderer = GetComponent<SpriteRenderer>();
+        skullSpriteRenderer = GetComponent<SpriteRenderer>();
 	}
 	
 	// Update is called once per frame
@@ -40,7 +40,7 @@ public class LevelEnd : MonoBehaviour {
         if(other.tag == "Player")
         {
             //SceneManager.LoadScene(levelToLoad);
-            flagSpriteRenderer.sprite = flagOpen;
+            skullSpriteRenderer.sprite = skullTaken;
             StartCoroutine("LevelEndCo");
         }
     }
@@ -56,7 +56,7 @@ public class LevelEnd : MonoBehaviour {
 
         thePlayer.playerRigidBody.velocity = Vector3.zero;
 
-        PlayerPrefs.SetInt("CoinCount", theLevelManager.coinCount);
+        PlayerPrefs.SetInt("CoinCount", theLevelManager.bloodCount);
         PlayerPrefs.SetInt("CurrentLives", theLevelManager.currentLives);
 
         PlayerPrefs.SetInt(levelToUnlock, 1);

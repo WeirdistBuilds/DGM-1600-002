@@ -23,10 +23,10 @@ public class Coin : MonoBehaviour {
     {
         if (other.tag == "Player")
         {
-            theLevelManager.AddCoins(coinValue);
-            if (theLevelManager.coinCount >= bonusAtCoinCount)
+            theLevelManager.AddBlood(coinValue);
+            if (theLevelManager.bloodCount >= bonusAtCoinCount)
             {
-                theLevelManager.AddCoins(-bonusAtCoinCount);
+                theLevelManager.AddBlood(-bonusAtCoinCount);
                 theLevelManager.AddLives(livesAtBonus);
 
             }

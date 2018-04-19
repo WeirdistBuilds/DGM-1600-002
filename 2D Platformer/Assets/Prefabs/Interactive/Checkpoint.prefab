@@ -36,7 +36,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1540549010438966}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -3.5, y: -1.5, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -68,8 +68,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2e6b1239777be9e40b98f073fb39e93d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  flagClosed: {fileID: 21300602, guid: af75089ec92c25a4aa4dade63357157c, type: 3}
-  flagOpen: {fileID: 21300594, guid: af75089ec92c25a4aa4dade63357157c, type: 3}
+  computerOff: {fileID: 21300080, guid: 46624ff7f72365147ae4df6c3afe4ccd, type: 3}
+  computerOn: {fileID: 21300078, guid: 46624ff7f72365147ae4df6c3afe4ccd, type: 3}
   checkpointActive: 0
 --- !u!212 &212944056280721204
 SpriteRenderer:
@@ -105,7 +105,7 @@ SpriteRenderer:
   m_SortingLayerID: -603951733
   m_SortingLayer: -1
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300602, guid: af75089ec92c25a4aa4dade63357157c, type: 3}
+  m_Sprite: {fileID: 21300080, guid: 46624ff7f72365147ae4df6c3afe4ccd, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0

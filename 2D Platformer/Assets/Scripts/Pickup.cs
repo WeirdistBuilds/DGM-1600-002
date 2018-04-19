@@ -7,14 +7,14 @@ public class Pickup : MonoBehaviour {
     private LevelManager theLevelManager;
     public SpriteRenderer theSprite;
 
-    public enum States { life, coin1, coin5, heart };
+    public enum States { life, blood1, blood5, heart };
     public States pickupState;
 
-    public Sprite coin1Sprite;
-    public Sprite coin5Sprite;
-    public int bonusAtCoinCount;
-    public int coin1Value;
-    public int coin5Value;
+    public Sprite blood1Sprite;
+    public Sprite blood5Sprite;
+    public int bonusAtBloodCount;
+    public int blood1Value;
+    public int blood5Value;
     public int livesAtBonus;
 
     public Sprite heartSprite;
@@ -33,11 +33,11 @@ public class Pickup : MonoBehaviour {
             case States.life:
                 theSprite.sprite = lifeSprite;
                 break;
-            case States.coin1:
-                theSprite.sprite = coin1Sprite;
+            case States.blood1:
+                theSprite.sprite = blood1Sprite;
                 break;
-            case States.coin5:
-                theSprite.sprite = coin5Sprite;
+            case States.blood5:
+                theSprite.sprite = blood5Sprite;
                 break;
             case States.heart:
                 theSprite.sprite = heartSprite;
@@ -57,20 +57,20 @@ public class Pickup : MonoBehaviour {
                 case States.life:
                     theLevelManager.AddLives(livesToAdd);
                     break;
-                case States.coin1:
-                    theLevelManager.AddCoins(coin1Value);
-                    if (theLevelManager.coinCount >= bonusAtCoinCount)
+                case States.blood1:
+                    theLevelManager.AddBlood(blood1Value);
+                    if (theLevelManager.bloodCount >= bonusAtBloodCount)
                     {
-                        theLevelManager.AddCoins(-bonusAtCoinCount);
+                        theLevelManager.AddBlood(-bonusAtBloodCount);
                         theLevelManager.AddLives(livesAtBonus);
 
                     }
                     break;
-                case States.coin5:
-                    theLevelManager.AddCoins(coin5Value);
-                    if (theLevelManager.coinCount >= bonusAtCoinCount)
+                case States.blood5:
+                    theLevelManager.AddBlood(blood5Value);
+                    if (theLevelManager.bloodCount >= bonusAtBloodCount)
                     {
-                        theLevelManager.AddCoins(-bonusAtCoinCount);
+                        theLevelManager.AddBlood(-bonusAtBloodCount);
                         theLevelManager.AddLives(livesAtBonus);
 
                     }
