@@ -20,7 +20,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4142857644069578}
   - component: {fileID: 212947013333470448}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: kleesprites_12
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -36,7 +36,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4775706495357980}
   - component: {fileID: 212935984295588422}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: kleesprites_14
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -52,7 +52,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4741376984559338}
   - component: {fileID: 212223182478606566}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: kleesprites_13
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -68,7 +68,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4464296655340168}
   - component: {fileID: 61414783974652232}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: 1x3
   m_TagString: Untagged
   m_Icon: {fileID: 0}

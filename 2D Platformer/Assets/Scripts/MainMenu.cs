@@ -24,7 +24,7 @@ public class MainMenu : MonoBehaviour {
 
     public void NewGame()
     {
-        SceneManager.LoadScene(firstLevel);
+        SceneManager.LoadScene(levelSelect);
         for (int i = 0; i < levelNames.Length; i++)
         {
             PlayerPrefs.SetInt(levelNames[i], 0);

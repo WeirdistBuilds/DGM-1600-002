@@ -25,6 +25,7 @@ public class Boss : MonoBehaviour {
 
     public GameObject dropSaw;
     public GameObject theBoss;
+    public GameObject bossWalls;
     public GameObject rightPlatforms;
     public GameObject leftPlatforms;
     public GameObject levelExit;
@@ -38,6 +39,7 @@ public class Boss : MonoBehaviour {
         timeBetweenDropStore = timeBetweenDrops;
         platformCount = waitForPlatforms;
         currentHealth = startingHealth;
+        bossWalls.SetActive(false);
         theCamera = FindObjectOfType<CameraController>();
         theLevelManager = FindObjectOfType<LevelManager>();
         bossRight = true;
@@ -60,6 +62,7 @@ public class Boss : MonoBehaviour {
             theBoss.SetActive(false);
             leftPlatforms.SetActive(false);
             rightPlatforms.SetActive(false);
+            bossWalls.SetActive(false);
 
             timeBetweenDrops = timeBetweenDropStore;
             platformCount = waitForPlatforms;
@@ -76,6 +79,7 @@ public class Boss : MonoBehaviour {
         if(bossActive)
         {
             theCamera.followTarget = false;
+            bossWalls.SetActive(true);
             theCamera.transform.position = Vector3.Lerp(theCamera.transform.position, new Vector3(transform.position.x, theCamera.transform.position.y, theCamera.transform.position.z), theCamera.transitionTime * Time.deltaTime);
 
 

@@ -19,7 +19,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4253938343059640}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: 1x1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -36,7 +36,7 @@ GameObject:
   - component: {fileID: 4814357420540420}
   - component: {fileID: 212933471673299092}
   - component: {fileID: 61915809571459502}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: kleesprites_11
   m_TagString: Untagged
   m_Icon: {fileID: 0}

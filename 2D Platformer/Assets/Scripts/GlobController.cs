@@ -2,23 +2,23 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SpiderController : MonoBehaviour {
+public class GlobController : MonoBehaviour {
 
     public float moveSpeed;
     private bool canMove;
 
-    private Rigidbody2D spiderRigidBody;
+    private Rigidbody2D globRigidBody;
 
 	// Use this for initialization
 	void Start () {
-        spiderRigidBody = GetComponent<Rigidbody2D>();
+        globRigidBody = GetComponent<Rigidbody2D>();
     }
 	
 	// Update is called once per frame
 	void Update () {
 		if(canMove)
         {
-            spiderRigidBody.velocity = new Vector3(-moveSpeed, spiderRigidBody.velocity.y, 0f);
+            globRigidBody.velocity = new Vector3(-moveSpeed, globRigidBody.velocity.y, 0f);
         }
 	}
 

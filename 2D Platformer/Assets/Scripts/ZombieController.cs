@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GreenWiggleController : MonoBehaviour {
+public class ZombieController : MonoBehaviour {
 
     public Transform leftPoint;
     public Transform rightPoint;
@@ -10,12 +10,12 @@ public class GreenWiggleController : MonoBehaviour {
     public float moveSpeed;
     public bool movingRight;
 
-    private Rigidbody2D greenWiggleRigidBody;
+    private Rigidbody2D zombieRigidBody;
 
 
 	// Use this for initialization
 	void Start () {
-        greenWiggleRigidBody = GetComponent<Rigidbody2D>();
+        zombieRigidBody = GetComponent<Rigidbody2D>();
 	}
 	
 	// Update is called once per frame
@@ -32,11 +32,11 @@ public class GreenWiggleController : MonoBehaviour {
 
         if(movingRight)
         {
-            greenWiggleRigidBody.velocity = new Vector3(moveSpeed, greenWiggleRigidBody.velocity.y, 0f);
+            zombieRigidBody.velocity = new Vector3(moveSpeed, zombieRigidBody.velocity.y, 0f);
         }
         else
         {
-            greenWiggleRigidBody.velocity = new Vector3(-moveSpeed, greenWiggleRigidBody.velocity.y, 0f);
+            zombieRigidBody.velocity = new Vector3(-moveSpeed, zombieRigidBody.velocity.y, 0f);
         }
 
     }

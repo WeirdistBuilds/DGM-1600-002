@@ -20,7 +20,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4954510308827666}
   - component: {fileID: 212291210353460494}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: kleesprites_13
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -36,7 +36,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4198969442785962}
   - component: {fileID: 212050603532093352}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: kleesprites_13 (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -52,7 +52,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4769392760410396}
   - component: {fileID: 212674647048840552}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: kleesprites_23 (8)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -68,7 +68,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4568487914886608}
   - component: {fileID: 212598859278444990}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: kleesprites_23 (9)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -84,7 +84,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4054151886218294}
   - component: {fileID: 212636137072150092}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: kleesprites_23 (7)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -100,7 +100,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4363334741204048}
   - component: {fileID: 212692795418129152}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: kleesprites_23
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -116,7 +116,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4212089025777960}
   - component: {fileID: 212423450552445108}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: kleesprites_23 (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -132,7 +132,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4880036656833868}
   - component: {fileID: 212677554166023378}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: kleesprites_13 (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -148,7 +148,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4923335533230024}
   - component: {fileID: 61070137319670594}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: 3x5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -164,7 +164,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4584908633683198}
   - component: {fileID: 212805767584503214}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: kleesprites_23 (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -180,7 +180,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4516251313287022}
   - component: {fileID: 212471794593493298}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: kleesprites_23 (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -196,7 +196,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4543486298180666}
   - component: {fileID: 212451390520246978}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: kleesprites_13 (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -212,7 +212,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4924991326644696}
   - component: {fileID: 212370305808701938}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: kleesprites_23 (5)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -228,7 +228,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4127617818399546}
   - component: {fileID: 212924602571358098}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: kleesprites_23 (10)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -244,7 +244,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4736487898697102}
   - component: {fileID: 212556917696295876}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: kleesprites_13 (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -260,7 +260,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4972793779060456}
   - component: {fileID: 212698986982754396}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: kleesprites_23 (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -430,7 +430,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1416354485299356}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 133.12398, y: -3.613896, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4954510308827666}
@@ -813,7 +813,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300026, guid: 46624ff7f72365147ae4df6c3afe4ccd, type: 3}
+  m_Sprite: {fileID: 21300028, guid: 46624ff7f72365147ae4df6c3afe4ccd, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -989,7 +989,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300026, guid: 46624ff7f72365147ae4df6c3afe4ccd, type: 3}
+  m_Sprite: {fileID: 21300024, guid: 46624ff7f72365147ae4df6c3afe4ccd, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0

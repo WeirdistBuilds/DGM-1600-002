@@ -92,6 +92,7 @@ public class PlayerController : MonoBehaviour {
 
             playerAnim.SetFloat("Speed", Mathf.Abs(playerRigidBody.velocity.x));
             playerAnim.SetBool("Grounded", isGrounded);
+            playerAnim.SetFloat("IFrameCounter", iFrameCounter);
 
             if (playerRigidBody.velocity.y < 0)
             {
