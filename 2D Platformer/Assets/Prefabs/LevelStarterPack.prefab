@@ -2704,6 +2704,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eca7b78cd17d77e469fcde23933e8d60, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  bloodBonus: 10
+  bonusAtBloodCount: 100
+  livesAtBonus: 1
   bounceForce: 15
   deathAnim: {fileID: 1035652430170020, guid: 68585f0dc088ae347864c9a57c64fcb1, type: 2}
 --- !u!114 &114876920819298620

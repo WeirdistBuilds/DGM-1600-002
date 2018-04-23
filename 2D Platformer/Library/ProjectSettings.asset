@@ -632,7 +632,7 @@ PlayerSettings:
   cloudServicesEnabled:
     UNet: 1
   facebookSdkVersion: 7.9.4
-  apiCompatibilityLevel: 2
+  apiCompatibilityLevel: 3
   cloudProjectId: e323e5d6-ff10-47cb-b4f9-63741910c184
   projectName: 2D Platformer
   organizationId: weirdistbuilds

@@ -2328,14 +2328,6 @@ Prefab:
       propertyPath: m_Name
       value: ZombieHolder (1)
       objectReference: {fileID: 0}
-    - target: {fileID: 4294267929216724, guid: f34d5ffae39d1c8488e2f2c9666facb4, type: 2}
-      propertyPath: m_LocalPosition.x
-      value: -2
-      objectReference: {fileID: 0}
-    - target: {fileID: 4051430069307634, guid: f34d5ffae39d1c8488e2f2c9666facb4, type: 2}
-      propertyPath: m_LocalPosition.x
-      value: 2
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: f34d5ffae39d1c8488e2f2c9666facb4, type: 2}
   m_IsPrefabParent: 0
