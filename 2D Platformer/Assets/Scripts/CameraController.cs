@@ -31,9 +31,10 @@ public class CameraController : MonoBehaviour {
                 focusPosition = new Vector3(focusPosition.x - leadSpace, focusPosition.y, focusPosition.z);
             }
 
-            //transform.position = focusPosition;
+            transform.position = focusPosition;
 
-            transform.position = Vector3.Lerp(transform.position, focusPosition, transitionTime * Time.deltaTime);
+            //use for lerp motion
+            //transform.position = Vector3.Lerp(transform.position, focusPosition, transitionTime * Time.deltaTime);
         }
 	}
 }

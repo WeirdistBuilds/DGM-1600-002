@@ -20,6 +20,8 @@ TextureImporter:
     21300026: kleesprites2_13
     21300028: kleesprites2_14
     21300030: kleesprites2_15
+    21300032: kleesprites2_16
+    21300034: kleesprites2_17
   externalObjects: {}
   serializedVersion: 4
   mipmaps:
@@ -310,6 +312,34 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 71
+        y: 2
+        width: 21
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: kleesprites2_16
+      rect:
+        serializedVersion: 2
+        x: 94
+        y: 2
+        width: 21
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: kleesprites2_17
+      rect:
+        serializedVersion: 2
+        x: 117
         y: 2
         width: 21
         height: 21

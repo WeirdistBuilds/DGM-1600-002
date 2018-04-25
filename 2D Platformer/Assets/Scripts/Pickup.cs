@@ -55,10 +55,12 @@ public class Pickup : MonoBehaviour {
             switch (pickupState)
             {
                 case States.life:
+                    theLevelManager.lifeSound.Play();
                     theLevelManager.AddLives(livesToAdd);
                     break;
                 case States.blood1:
                     theLevelManager.AddBlood(blood1Value);
+                    theLevelManager.blood1Sound.Play();
                     if (theLevelManager.bloodCount >= bonusAtBloodCount)
                     {
                         theLevelManager.AddBlood(-bonusAtBloodCount);
@@ -67,6 +69,7 @@ public class Pickup : MonoBehaviour {
                     }
                     break;
                 case States.blood5:
+                    theLevelManager.blood5Sound.Play();
                     theLevelManager.AddBlood(blood5Value);
                     if (theLevelManager.bloodCount >= bonusAtBloodCount)
                     {
@@ -76,6 +79,7 @@ public class Pickup : MonoBehaviour {
                     }
                     break;
                 case States.heart:
+                    theLevelManager.heartSound.Play();
                     theLevelManager.GiveHealth(healthToAdd);
                     break;
                 default:

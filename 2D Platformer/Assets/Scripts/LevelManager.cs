@@ -12,10 +12,13 @@ public class LevelManager : MonoBehaviour {
     //invincibility variable
     public bool invincible;
 
-    //blood variables
+    //pickup variables
     public int bloodCount;
     public Text bloodText;
-    public AudioSource bloodSound;
+    public AudioSource blood1Sound;
+    public AudioSource blood5Sound;
+    public AudioSource lifeSound;
+    public AudioSource heartSound;
 
     //health variables
     public Image heart1;
@@ -122,14 +125,12 @@ public class LevelManager : MonoBehaviour {
     {
         bloodCount += bloodToAdd;
         bloodText.text = "Blood: " + bloodCount;
-        bloodSound.Play();
     }
 
     public void AddLives(int livesToAdd)
     {
         currentLives += livesToAdd;
         livesText.text = "x " + currentLives;
-        bloodSound.Play();
     }
 
     public void HurtPlayer(int damageToTake)
