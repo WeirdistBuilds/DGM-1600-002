@@ -42,6 +42,7 @@ public class LevelManager : MonoBehaviour {
     public GameObject gameOverScreen;
     public AudioSource levelMusic;
     public AudioSource gameOverMusic;
+    public AudioSource levelCompleteMusic;
     public bool respawnCoActive;
 
 

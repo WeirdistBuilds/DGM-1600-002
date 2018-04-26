@@ -30,8 +30,9 @@ public class MainMenu : MonoBehaviour {
             PlayerPrefs.SetInt(levelNames[i], 0);
         }
 
-        PlayerPrefs.SetInt("CoinCount", 0);
+        PlayerPrefs.SetInt("BloodCount", 0);
         PlayerPrefs.SetInt("CurrentLives", 3);
+        PlayerPrefs.SetInt("EndCoin", 0);
     }
 
     public void Continue()

@@ -39,7 +39,8 @@ public class GameOver : MonoBehaviour {
 
     public void ResetCoinsLives()
     {
-        PlayerPrefs.SetInt("CoinCount", 0);
+        PlayerPrefs.SetInt("BloodCount", 0);
         PlayerPrefs.SetInt("CurrentLives", theLevelManager.startingLives);
+        PlayerPrefs.SetInt("EndCoin", 0);
     }
 }

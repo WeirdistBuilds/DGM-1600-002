@@ -26,7 +26,7 @@ public class PlayerController : MonoBehaviour {
     public GameObject stompBox;
 
     //animation variable
-    private Animator playerAnim;
+    public Animator playerAnim;
 
     //level manager
     public LevelManager theLevelManager;

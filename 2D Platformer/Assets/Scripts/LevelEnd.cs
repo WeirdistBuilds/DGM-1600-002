@@ -14,6 +14,7 @@ public class LevelEnd : MonoBehaviour {
 
     public Sprite skullTaken;
     private SpriteRenderer skullSpriteRenderer;
+    public Animator coinAnim;
 
     public float waitToMove;
     public float waitToLoad;
@@ -25,6 +26,11 @@ public class LevelEnd : MonoBehaviour {
         theCamera = FindObjectOfType<CameraController>();
         theLevelManager = FindObjectOfType<LevelManager>();
         skullSpriteRenderer = GetComponent<SpriteRenderer>();
+        if(tag == "Boss")
+        {
+            coinAnim = GetComponent<Animator>();
+        }
+
 	}
 	
 	// Update is called once per frame
@@ -40,19 +46,28 @@ public class LevelEnd : MonoBehaviour {
         if(other.tag == "Player")
         {
             //SceneManager.LoadScene(levelToLoad);
-            skullSpriteRenderer.sprite = skullTaken;
-            StartCoroutine("LevelEndCo");
+            if (tag == "Boss")
+            {
+                coinAnim.SetBool("CoinTaken", true);
+                StartCoroutine("LevelEndCo");
+                PlayerPrefs.SetInt("EndCoin", 1);
+            }
+            else
+            {
+                skullSpriteRenderer.sprite = skullTaken;
+                StartCoroutine("LevelEndCo");
+            }
         }
     }
 
     public IEnumerator LevelEndCo()
     {
         thePlayer.canMove = false;
-        thePlayer.isGrounded = true;
+        thePlayer.playerAnim.SetBool("IsGrounded", true);
         theCamera.followTarget = false;
         theLevelManager.invincible = true;
         theLevelManager.levelMusic.Stop();
-        theLevelManager.gameOverMusic.Play();
+        theLevelManager.levelCompleteMusic.Play();
 
         thePlayer.playerRigidBody.velocity = Vector3.zero;
 

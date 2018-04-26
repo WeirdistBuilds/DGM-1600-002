@@ -3406,11 +3406,6 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 39ae988249a880048be182032d97e5d3, type: 2}
   m_IsPrefabParent: 0
---- !u!1 &626860248 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 1008971720137384, guid: 391b20c4b6d81d6459c6984d0803ea60,
-    type: 2}
-  m_PrefabInternal: {fileID: 1176978584}
 --- !u!1001 &628043353
 Prefab:
   m_ObjectHideFlags: 0
@@ -6582,7 +6577,12 @@ Prefab:
         type: 2}
       propertyPath: m_FirstSelected
       value: 
-      objectReference: {fileID: 626860248}
+      objectReference: {fileID: 0}
+    - target: {fileID: 82415399325129018, guid: 391b20c4b6d81d6459c6984d0803ea60,
+        type: 2}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 0c1e79840229d7844a9b16554a1c3a93, type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 391b20c4b6d81d6459c6984d0803ea60, type: 2}
   m_IsPrefabParent: 0
