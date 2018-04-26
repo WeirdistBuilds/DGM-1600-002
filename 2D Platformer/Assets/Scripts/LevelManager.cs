@@ -40,6 +40,7 @@ public class LevelManager : MonoBehaviour {
     public AudioSource levelMusic;
     public AudioSource gameOverMusic;
     public AudioSource levelCompleteMusic;
+    public AudioSource bossMusic;
     public AudioSource endingMusic;
 
     //death and respawn variables
