@@ -7,8 +7,11 @@ using UnityEngine.UI;
 public class Charon : MonoBehaviour {
 
     public GameObject boat;
-    private Vector3 currentTarget;
-    public Transform destination;
+    public GameObject credits;
+    private Vector3 boatTarget;
+    public Transform boatDestination;
+    private Vector3 creditsTarget;
+    public Transform creditsDestination;
     private Animator charonAnim;
     private PlayerController thePlayer;
     private CameraController theCamera;
@@ -28,7 +31,8 @@ public class Charon : MonoBehaviour {
         theCamera = FindObjectOfType<CameraController>();
         theLevelManager = FindObjectOfType<LevelManager>();
         charonAnim = GetComponent<Animator>();
-        currentTarget = destination.position;
+        boatTarget = boatDestination.position;
+        creditsTarget = creditsDestination.position;
         if (PlayerPrefs.GetInt("EndCoin") > 0)
         {
             hasCoin = true;
@@ -41,7 +45,8 @@ public class Charon : MonoBehaviour {
     {
         if (moveBoat)
         {
-            boat.transform.position = Vector3.MoveTowards(boat.transform.position, currentTarget, moveSpeed * Time.deltaTime);
+            boat.transform.position = Vector3.MoveTowards(boat.transform.position, boatTarget, moveSpeed * Time.deltaTime);
+            credits.transform.position = Vector3.MoveTowards(credits.transform.position, creditsTarget, moveSpeed * Time.deltaTime);
         }
     }
 
@@ -61,8 +66,7 @@ public class Charon : MonoBehaviour {
         theCamera.followTarget = false;
         theLevelManager.invincible = true;
         theLevelManager.levelMusic.Stop();
-        theLevelManager.levelCompleteMusic.Play();
-        theLevelManager.gameEnding = true;
+        theLevelManager.endingMusic.Play();
         thePlayer.playerRigidBody.velocity = Vector3.zero;
 
         yield return new WaitForSeconds(waitToMove);

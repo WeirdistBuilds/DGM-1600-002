@@ -7,7 +7,7 @@ public class LevelManager : MonoBehaviour {
 
 
     
-    public PlayerController currentPlayer;
+    public PlayerController thePlayer;
 
     //invincibility variable
     public bool invincible;
@@ -19,6 +19,7 @@ public class LevelManager : MonoBehaviour {
     public AudioSource blood5Sound;
     public AudioSource lifeSound;
     public AudioSource heartSound;
+    public AudioSource checkpointSound;
 
     //health variables
     public Image heart1;
@@ -35,20 +36,23 @@ public class LevelManager : MonoBehaviour {
     public int startingLives;
     public Text livesText;
 
+    //music
+    public AudioSource levelMusic;
+    public AudioSource gameOverMusic;
+    public AudioSource levelCompleteMusic;
+    public AudioSource endingMusic;
+
     //death and respawn variables
     public GameObject deathAnim;
     public float respawnWaitTime;
     public ResetOnRespawn[] objectsToReset;
     public GameObject gameOverScreen;
-    public AudioSource levelMusic;
-    public AudioSource gameOverMusic;
-    public AudioSource levelCompleteMusic;
     public bool respawnCoActive;
 
 
     // Use this for initialization
     void Start () {
-        currentPlayer = FindObjectOfType<PlayerController>();
+        thePlayer = FindObjectOfType<PlayerController>();
         healthCount = maxHealth;
         
         //carry blood over or not
@@ -88,7 +92,7 @@ public class LevelManager : MonoBehaviour {
         }
         else
         {
-            currentPlayer.gameObject.SetActive(false);
+            thePlayer.gameObject.SetActive(false);
             gameOverScreen.SetActive(true);
             levelMusic.Stop();
             gameOverMusic.Play();
@@ -100,8 +104,8 @@ public class LevelManager : MonoBehaviour {
     {
         respawnCoActive = true;
 
-        currentPlayer.gameObject.SetActive(false);
-        Instantiate(deathAnim, currentPlayer.transform.position, currentPlayer.transform.rotation);
+        thePlayer.gameObject.SetActive(false);
+        Instantiate(deathAnim, thePlayer.transform.position, thePlayer.transform.rotation);
 
         yield return new WaitForSeconds(respawnWaitTime);
 
@@ -112,8 +116,8 @@ public class LevelManager : MonoBehaviour {
         bloodCount = 0;
         bloodText.text = "Blood: " + bloodCount;
 
-        currentPlayer.transform.position = currentPlayer.spawnPoint;
-        currentPlayer.gameObject.SetActive(true);
+        thePlayer.transform.position = thePlayer.spawnPoint;
+        thePlayer.gameObject.SetActive(true);
 
         for(int i = 0; i < objectsToReset.Length; i++)
         {
@@ -141,8 +145,8 @@ public class LevelManager : MonoBehaviour {
             healthCount -= damageToTake;
             UpdateHeartMeter();
 
-            currentPlayer.Knockback();
-            currentPlayer.hurtSound.Play();
+            thePlayer.Knockback();
+            thePlayer.hurtSound.Play();
             if (healthCount <= 0)
             {
                 Respawn();

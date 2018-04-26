@@ -22,6 +22,7 @@ GameObject:
   - component: {fileID: 212232552692015890}
   - component: {fileID: 114300553078393756}
   - component: {fileID: 58279069059839896}
+  - component: {fileID: 114632712388547530}
   m_Layer: 0
   m_Name: Blood5
   m_TagString: Untagged
@@ -36,7 +37,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1137401372822698}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 2, y: 3, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -80,6 +81,17 @@ MonoBehaviour:
   healthToAdd: 2
   lifeSprite: {fileID: 21300076, guid: 46624ff7f72365147ae4df6c3afe4ccd, type: 3}
   livesToAdd: 1
+--- !u!114 &114632712388547530
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1137401372822698}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ae40aaad21657ba4282810790f27cfdb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!212 &212232552692015890
 SpriteRenderer:
   m_ObjectHideFlags: 1

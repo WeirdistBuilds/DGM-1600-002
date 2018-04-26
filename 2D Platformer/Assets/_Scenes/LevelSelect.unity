@@ -843,13 +843,16 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Your story is over.
+  m_Text: 'You have died.
+
+    Your story is over.
 
 
-    Charon will not take you across the river Styx without a golden coin.
+    But Charon will not take you across the river Styx without a golden coin.
 
 
-    Jump through the doors to proceed....'
+
+    Press jump to enter the doors....'
 --- !u!222 &635043755
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1161,6 +1164,39 @@ Transform:
   m_PrefabParentObject: {fileID: 4719482197582096, guid: d9843ff81b02f4d419612678c9894d7b,
     type: 2}
   m_PrefabInternal: {fileID: 1246915432}
+--- !u!1 &839984995
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 839984996}
+  m_Layer: 0
+  m_Name: CreditDestination
+  m_TagString: Untagged
+  m_Icon: {fileID: 571167235653111936, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &839984996
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 839984995}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0.023571825, y: 0.023571823, z: 0.023571823}
+  m_Children: []
+  m_Father: {fileID: 1964662443}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -3.869995, y: 38.72}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1001 &851832122
 Prefab:
   m_ObjectHideFlags: 0
@@ -1538,8 +1574,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0.36}
-  m_SizeDelta: {x: 160, y: 30}
+  m_AnchoredPosition: {x: -3.87, y: -5.33}
+  m_SizeDelta: {x: 417.922, y: 555.779}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1254599538
 MonoBehaviour:
@@ -1573,7 +1609,53 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: ' '
+  m_Text: 'After World
+
+    ~
+
+    Game - Kyle Hinckley
+
+    Made with Unity 2017.3.1f1
+
+
+    Scripts - Kyle Hinckley
+
+    Made with Visual Studio 2017
+
+
+    Sprites - Kyle Hinckley
+
+    Made with Photoshop CC 2018
+
+
+    Music - Kyle Hinckley
+
+    Made with FL Studio 10
+
+
+    Sound Effects - Kyle Hinckley
+
+    Made with FL Studio 10 and Audacity
+
+
+    Title Screen - Kyle Hinckley
+
+    Made with Photoshop CC 2018
+
+
+    Backgrounds - Kyle Hinckley
+
+    Made with Photoshop CC 2018
+
+
+    Font Title - Alagard
+
+    Made by Hewett Tsoi
+
+    Found on Dafont.com
+
+
+    Thanks for playing!'
 --- !u!222 &1254599539
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -2033,11 +2115,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   boat: {fileID: 2132389658}
-  destination: {fileID: 742431690}
+  credits: {fileID: 1254599536}
+  boatDestination: {fileID: 742431690}
+  creditsDestination: {fileID: 839984996}
   moveSpeed: 1
   waitToMove: 4
-  waitToLoad: 15
-  hasCoin: 1
+  waitToLoad: 25
+  hasCoin: 0
 --- !u!61 &1666516912
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2102,11 +2186,17 @@ Prefab:
       propertyPath: m_RootOrder
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 114538074568736512, guid: 391b20c4b6d81d6459c6984d0803ea60,
+    - target: {fileID: 212394296978492834, guid: 391b20c4b6d81d6459c6984d0803ea60,
         type: 2}
-      propertyPath: fadeOut
-      value: 1
-      objectReference: {fileID: 0}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 3cfdb773df8226b418687e8e7e8f0e9c,
+        type: 3}
+    - target: {fileID: 82415399325129018, guid: 391b20c4b6d81d6459c6984d0803ea60,
+        type: 2}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: db729d29587dae34990e56bea00b55c5, type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 391b20c4b6d81d6459c6984d0803ea60, type: 2}
   m_IsPrefabParent: 0
@@ -2304,12 +2394,13 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1254599537}
+  - {fileID: 839984996}
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 52.94, y: -6.61}
+  m_AnchoredPosition: {x: 53.83, y: -8.01}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1979573853
