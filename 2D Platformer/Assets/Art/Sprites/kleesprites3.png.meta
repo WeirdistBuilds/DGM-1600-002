@@ -13,6 +13,7 @@ TextureImporter:
     21300012: kleesprites3_6
     21300014: kleesprites3_7
     21300016: kleesprites3_8
+    21300018: kleesprites3_9
   externalObjects: {}
   serializedVersion: 4
   mipmaps:
@@ -120,8 +121,8 @@ TextureImporter:
       name: kleesprites3_2
       rect:
         serializedVersion: 2
-        x: 2
-        y: 71
+        x: 48
+        y: 94
         width: 21
         height: 21
       alignment: 0
@@ -134,7 +135,7 @@ TextureImporter:
       name: kleesprites3_3
       rect:
         serializedVersion: 2
-        x: 25
+        x: 2
         y: 71
         width: 21
         height: 21
@@ -148,7 +149,7 @@ TextureImporter:
       name: kleesprites3_4
       rect:
         serializedVersion: 2
-        x: 48
+        x: 25
         y: 71
         width: 21
         height: 21
@@ -162,8 +163,8 @@ TextureImporter:
       name: kleesprites3_5
       rect:
         serializedVersion: 2
-        x: 2
-        y: 48
+        x: 48
+        y: 71
         width: 21
         height: 21
       alignment: 0
@@ -176,7 +177,7 @@ TextureImporter:
       name: kleesprites3_6
       rect:
         serializedVersion: 2
-        x: 25
+        x: 2
         y: 48
         width: 21
         height: 21
@@ -190,7 +191,7 @@ TextureImporter:
       name: kleesprites3_7
       rect:
         serializedVersion: 2
-        x: 48
+        x: 25
         y: 48
         width: 21
         height: 21
@@ -202,6 +203,20 @@ TextureImporter:
       tessellationDetail: 0
     - serializedVersion: 2
       name: kleesprites3_8
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 48
+        width: 21
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: kleesprites3_9
       rect:
         serializedVersion: 2
         x: 71

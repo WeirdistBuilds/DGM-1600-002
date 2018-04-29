@@ -30,6 +30,7 @@ public class Boss : MonoBehaviour {
     public GameObject leftPlatforms;
     public GameObject levelExit;
 
+    private Animator bossAnim;
     private LevelManager theLevelManager;
     private CameraController theCamera;
 
@@ -42,6 +43,7 @@ public class Boss : MonoBehaviour {
         bossWalls.SetActive(false);
         theCamera = FindObjectOfType<CameraController>();
         theLevelManager = FindObjectOfType<LevelManager>();
+        bossAnim = theBoss.GetComponent<Animator>();
         bossRight = true;
 
 
@@ -81,9 +83,8 @@ public class Boss : MonoBehaviour {
             theCamera.followTarget = false;
             bossWalls.SetActive(true);
             theCamera.transform.position = Vector3.Lerp(theCamera.transform.position, new Vector3(transform.position.x, theCamera.transform.position.y, theCamera.transform.position.z), theCamera.transitionTime * Time.deltaTime);
-
-
             theBoss.SetActive(true);
+
             if(dropCount > 0)
             {
                 dropCount -= Time.deltaTime;
@@ -97,6 +98,7 @@ public class Boss : MonoBehaviour {
 
             if(bossRight)
             {
+                bossAnim.SetBool("Left", false);
                 if (platformCount > 0)
                 {
                     platformCount -= Time.deltaTime;
@@ -108,6 +110,7 @@ public class Boss : MonoBehaviour {
             }
             else
             {
+                bossAnim.SetBool("Left", true);
                 if (platformCount > 0)
                 {
                     platformCount -= Time.deltaTime;

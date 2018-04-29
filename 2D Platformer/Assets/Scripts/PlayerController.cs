@@ -9,6 +9,7 @@ public class PlayerController : MonoBehaviour {
     //jump variables
     public bool isGrounded;
     public float moveSpeed;
+    public float sprintSpeed;
     private float activeMoveSpeed;
     public float jumpSpeed;
 
@@ -84,6 +85,12 @@ public class PlayerController : MonoBehaviour {
                 transform.localScale = new Vector3(-1f, 1f, 1f);
             }
 
+            if (Input.GetButtonDown("Jump") && isGrounded)
+            {
+                playerRigidBody.velocity = new Vector3(playerRigidBody.velocity.x, jumpSpeed);
+                jumpSound.Play();
+            }
+            
             if (Input.GetButtonDown("Jump") && isGrounded)
             {
                 playerRigidBody.velocity = new Vector3(playerRigidBody.velocity.x, jumpSpeed);

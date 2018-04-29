@@ -63,7 +63,7 @@ public class LevelEnd : MonoBehaviour {
     public IEnumerator LevelEndCo()
     {
         thePlayer.canMove = false;
-        thePlayer.playerAnim.SetBool("IsGrounded", true);
+        thePlayer.playerAnim.SetBool("Grounded", true);
         theCamera.followTarget = false;
         theLevelManager.invincible = true;
         theLevelManager.levelMusic.Stop();
